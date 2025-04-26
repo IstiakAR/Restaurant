@@ -1,0 +1,149 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+.menu-book {
+    display: flex;
+    max-width: 100%;
+    height: 95vh;
+    box-shadow: 0 30px 50px rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+    position: relative;
+}
+
+
+.menu-page {
+    width: 50%;
+    min-height: 750px;
+    position: relative;
+    box-sizing: border-box;
+    padding: 40px;
+    background-color: #f8f5e6;
+}
+
+.left-page {
+    border-radius: 5px 0 0 5px;
+    box-shadow: inset -10px 0 20px -10px rgba(0, 0, 0, 0.2);
+    background: linear-gradient(to right, #f8f5e6 95%, #e0d8b9);
+}
+
+.right-page {
+    border-radius: 0 5px 5px 0;
+    box-shadow: inset 10px 0 20px -10px rgba(0, 0, 0, 0.2);
+    transform-origin: left center;
+    background: linear-gradient(to left, #f8f5e6 95%, #e0d8b9);
+}
+
+.page-content {
+    position: relative;
+    height: 100%;
+    font-family: 'Cormorant Garamond', serif;
+}
+
+/* Paper texture effect using CSS */
+.page-content::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: repeating-linear-gradient(
+        to bottom,
+        transparent 0px,
+        transparent 2px,
+        rgba(0, 0, 0, 0.01) 2px,
+        rgba(0, 0, 0, 0.01) 4px
+    );
+    pointer-events: none;
+    z-index: 1;
+    opacity: 0.5;
+}
+
+.menu-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 36px;
+    text-align: center;
+    margin-bottom: 30px;
+    color: #2a2a2a;
+    position: relative;
+    border-bottom: 1px solid #d3c8a6;
+    padding-bottom: 15px;
+}
+
+.menu-section {
+    margin-bottom: 30px;
+}
+
+.menu-section h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+    color: #5c4727;
+    margin-bottom: 15px;
+    padding-bottom: 5px;
+    border-bottom: 1px dotted #d3c8a6;
+}
+
+.menu-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px dashed rgba(0, 0, 0, 0.1);
+}
+
+.item-details {
+    flex: 1;
+    padding-right: 10px;
+}
+
+.item-details h3 {
+    font-size: 18px;
+    margin: 0 0 5px 0;
+    font-weight: 600;
+    color: #333;
+}
+
+.item-details p {
+    margin: 0;
+    font-size: 16px;
+    font-style: italic;
+    color: #666;
+    line-height: 1.4;
+}
+
+.item-price {
+    font-family: 'Playfair Display', serif;
+    font-weight: bold;
+    font-size: 18px;
+    color: #5c4727;
+    white-space: nowrap;
+    align-self: flex-start;
+}
+
+@media (max-width: 768px) {
+    .menu-book {
+        flex-direction: column;
+        max-width: 100%;
+    }
+    
+    .menu-page {
+        width: 100%;
+    }
+    
+    .menu-book::before {
+        display: none;
+    }
+    
+    .left-page {
+        border-radius: 5px 5px 0 0;
+        box-shadow: inset 0 -10px 20px -10px rgba(0, 0, 0, 0.2);
+    }
+    
+    .right-page {
+        border-radius: 0 0 5px 5px;
+        box-shadow: inset 0 10px 20px -10px rgba(0, 0, 0, 0.2);
+    }
+}
